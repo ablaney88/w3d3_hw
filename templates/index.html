@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<html>
+    <head>
+        <title>Game Shop</title>
+    </head>
+    <body>
+        <header>
+        <h1>Game Shop</h1>
+        </header>
+        {% for order in orders %}
+        
+        <h2>{{order.customer_name}}, {{order.order_date}}, {{order.quantity}}, {{order.game_name}}</h2>
+        <a href="/orders/{{orders.index(order)}}">Show Order</a>
+
+        {% endfor %}
+
+        <!-- <a href="http://127.0.0.1:4999/orders/0">Order 1</a>
+        <a href="http://127.0.0.1:4999/orders/1">Order 2</a> -->
+    </body>
+
+</html>
